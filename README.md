@@ -1,4 +1,4 @@
-#Angular Universal Workshop
+# Angular Universal Workshop - NetConf Asturias 2020󠁥
 Bienvenidos a este taller para iniciarse en el mundo de Angular Universal. 
 Para poder realizarlo deberéis de tener node 10.13 o superior.
 
@@ -579,7 +579,7 @@ npm install
     Muy bien, vamos a resolverlo (en el fichero de reto.md)
     
     #RETO 2
-    Si intentáis ahora mismo hacer un ng serve, veréis que no funciona. Esto es debido a que el initial navigation del app.routing esta como 'enabled'. Veamos como lo resolvéis.
+    Si intentáis ahora mismo hacer un ng serve, veréis que no funciona. Esto es debido a que el initial navigation del app.routing esta como 'enabled'. Veamos como lo resolvéis. (en el fichero de reto_2.md)
     
 
 
