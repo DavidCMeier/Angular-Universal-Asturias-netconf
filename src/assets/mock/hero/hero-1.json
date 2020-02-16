@@ -1,0 +1,7 @@
+{
+  "id": 1,
+  "name": "Ada Lovelace",
+  "image": "assets/images/ada.jpg",
+  "alt": "Imagen de Ada Lovelace",
+  "description": "Fue una matemática, informática y escritora británica, célebre sobre todo por su trabajo acerca de la calculadora de uso general de Charles Babbage, la denominada máquina analítica. Entre sus notas sobre la máquina, se encuentra lo que se reconoce hoy como el primer algoritmo destinado a ser procesado por una máquina, por lo que se la considera como la primera programadora de ordenadores."
+}

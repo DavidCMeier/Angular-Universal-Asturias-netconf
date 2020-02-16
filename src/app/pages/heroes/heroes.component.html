@@ -1,0 +1,7 @@
+<mat-list>
+  <mat-list-item *ngFor="let hero of heroes |async" class="list">
+    <img matListAvatar class="avatar" [src]="hero.image" [alt]="hero.alt">
+    <h3 matLine class="name">{{hero.name}}</h3>
+    <a [routerLink]="['/heroes', hero.id]">Ver detalle</a>
+  </mat-list-item>
+</mat-list>

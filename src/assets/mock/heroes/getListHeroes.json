@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Ada Lovelace",
+    "image": "assets/images/ada.jpg",
+    "alt": "Imagen de Ada Lovelace",
+    "description": "Fue una matemática, informática y escritora británica, célebre sobre todo por su trabajo acerca de la calculadora de uso general de Charles Babbage, la denominada máquina analítica. Entre sus notas sobre la máquina, se encuentra lo que se reconoce hoy como el primer algoritmo destinado a ser procesado por una máquina, por lo que se la considera como la primera programadora de ordenadores."
+  },
+  {
+    "id": 2,
+    "name": "Margaret Hamilton",
+    "image": "assets/images/margaret_hamilton.png",
+    "alt": "Imagen de Margaret Hamilton con el código del software de navegación del Apolo impreso en doce libros.",
+    "description": "Fue directora de la División de Ingeniería de Software del Laboratorio de Instrumentación del MIT,1\u200B donde con su equipo desarrolló el software de navegación \"on-board\" para el Programa Espacial Apolo"
+  },
+  {
+    "id": 3,
+    "name": "Rosalind Franklin",
+    "image": "assets/images/Rosalind_Franklin.png",
+    "alt": "Rosalind Franklin mirando a través de un microscopio en 1955",
+    "description": "Rosalind Elsie Franklin fue una química y cristalógrafa inglesa, responsable de importantes contribuciones a la comprensión de la estructura del ADN (las imágenes por difracción de rayos X que revelaron la forma de doble hélice de esta molécula son de su autoría), del ARN, de los virus, del carbón y del grafito."
+  }
+]

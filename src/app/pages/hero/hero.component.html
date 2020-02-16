@@ -1,0 +1,13 @@
+<div class="center-card">
+  <mat-card class="example-card" *ngIf="hero">
+    <mat-card-header>
+      <mat-card-title>{{hero.name}}</mat-card-title>
+    </mat-card-header>
+    <img class="image-card" [src]="hero.image" [alt]="hero.alt">
+    <mat-card-content>
+      <p>
+        {{hero.description}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

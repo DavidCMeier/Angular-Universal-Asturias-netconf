@@ -1,0 +1,3 @@
+<p class="text-center">error id: {{id}}!</p>
+
+<img #img style="width: 100%" [src]="'https://http.cat/'+id+'.jpg'" alt="error cat image" (error)="this.img.src = ''">
