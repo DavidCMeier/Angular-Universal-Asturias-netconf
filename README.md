@@ -273,7 +273,7 @@ npm install
           }
         }
       ```
-      Ahora vamos al navegador, recargamos y veremos que en la consola se muestra o mismo que antes, pero... si vamos a la terminal con la que levantamos el servidor veremos el mensaje "Estamos en el servidor y no tenemos disponible la propiedad del navegador window"
+      Ahora vamos al navegador, recargamos y veremos que en la consola se muestra lo mismo que antes, pero... si vamos a la terminal con la que levantamos el servidor veremos el mensaje "Estamos en el servidor y no tenemos disponible la propiedad del navegador window"
     
       Aquí ahora toca hablar sobre la rehidratación.
           
@@ -293,7 +293,9 @@ npm install
   - Uso de TransferState:
   
     Debido a la rehidratación es posible que nuestro server.ts realice unas llamadas al servidor y luego al rehidratar la página, esta realice otra vez las mismas llamadas. Esto dependiendo del número de llamadas y de donde lo tengamos alojado puede ser muy problemático. Para esto usamos TransferState.
-
+    
+    Primero hay que importar el "BrowserTransferStateModule" en el app.module y el equivalente al servidor "ServerTransferStateModule" en el app.server.module
+    
     El uso de transfer State es muy sencillo: 
 
     ```typescript
@@ -406,20 +408,16 @@ npm install
       }
     
       intercept(req: HttpRequest<any>, next: HttpHandler) {
-        let serverReq: HttpRequest<any> = req
-    
-        if (this.request) {
-          serverReq = serverReq.clone({setHeaders: {'accept-language': this.request.headers['accept-language']}})
-          if (!req.url.startsWith('http')) {
-            let newUrl = `${this.request.protocol}://${this.request.get('host')}`
-            if (!req.url.startsWith('/')) {
-              newUrl += '/'
+        let serverReq: HttpRequest<any> = req;
+            if (this.request) {
+              let newUrl = `${this.request.protocol}://${this.request.get('host')}`;
+              if (!req.url.startsWith('/')) {
+                newUrl += '/';
+              }
+              newUrl += req.url;
+              serverReq = req.clone({url: newUrl});
             }
-            newUrl += req.url.startsWith(newUrl) ? req.url.replace(newUrl, '') : req.url
-            serverReq = serverReq.clone({url: newUrl})
-          }
-        }
-        return next.handle(serverReq)
+            return next.handle(serverReq);
       }
     }
     
@@ -458,15 +456,15 @@ npm install
         export interface ConfigSeo {
           title;
           description;
-          index;
-          follow;
-          keywords;
-          crawlerTitle;
-          crawlerDescription;
-          crawlerImage;
-          twitterTitle;
-          twitterDescription;
-          canonical;
+          index?;
+          follow?;
+          keywords?;
+          crawlerTitle?;
+          crawlerDescription?;
+          crawlerImage?;
+          twitterTitle?;
+          twitterDescription?;
+          canonical?;
         }
         ```
 

@@ -34,6 +34,7 @@ export function app() {
   server.get('*', (req, res) => {
     res.render(indexHtml, {
       req,
+      res,
       providers: [
         {provide: APP_BASE_HREF, useValue: req.baseUrl},
         {provide: REQUEST, useValue: req},
@@ -46,7 +47,7 @@ export function app() {
 }
 
 function run() {
-  const port = process.env.PORT || 4000;
+  const port = process.env.PORT || 4200;
 
   // Start up the Node server
   const server = app();

@@ -16,15 +16,17 @@ import {MatButtonModule} from '@angular/material/button';
     AppComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'universalApp'}),
+    BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NavbarModule,
     HeroesModule,
-    MatButtonModule
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

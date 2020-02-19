@@ -11,10 +11,10 @@ export class HeroesService {
   }
 
   getListHeroes() {
-    return this.http.get<Hero[]>('./assets/mock/heroes/getListHeroes.json');
+    return this.http.get<Hero[]>('/assets/mock/heroes/getListHeroes.json');
   }
 
   getHero(id: number) {
-    return this.http.get<Hero>(`./assets/mock/hero/hero-${id}.json`);
+    return this.http.get<Hero>(`/assets/mock/hero/hero-${id}.json`);
   }
 }
