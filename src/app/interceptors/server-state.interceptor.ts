@@ -1,7 +1,8 @@
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {TransferState} from '@angular/platform-browser';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
+import {makeStateKey, TransferState} from '@angular/platform-browser';
 import {Observable} from 'rxjs';
 import {Injectable} from '@angular/core';
+import {tap} from 'rxjs/operators';
 
 @Injectable()
 export class ServerStateInterceptor implements HttpInterceptor {
@@ -10,6 +11,10 @@ export class ServerStateInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(req);
+    return next.handle(req).pipe(tap((event) => {
+      if (event instanceof HttpResponse) {
+        this.transferState.set(makeStateKey(req.url), event.body);
+      }
+    }));
   }
 }

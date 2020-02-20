@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router';
+import {Inject, NgModule, PLATFORM_ID} from '@angular/core';
+import {ExtraOptions, ROUTER_CONFIGURATION, RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './pages/home/home.component';
 import {HeroResolver} from './resolvers/hero.resolver';
+import {isPlatformServer} from '@angular/common';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,4 +16,12 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, @Inject(ROUTER_CONFIGURATION) config: ExtraOptions) {
+    if (isPlatformServer(this.platformId)) {
+      config.initialNavigation = 'enabled';
+    }
+  }
+
+}

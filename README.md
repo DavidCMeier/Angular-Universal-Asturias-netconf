@@ -273,7 +273,7 @@ npm install
           }
         }
       ```
-      Ahora vamos al navegador, recargamos y veremos que en la consola se muestra lo mismo que antes, pero... si vamos a la terminal con la que levantamos el servidor veremos el mensaje "Estamos en el servidor y no tenemos disponible la propiedad del navegador window"
+      Ahora vamos al navegador, recargamos y veremos que en la consola se muestra lço mismo que antes, pero... si vamos a la terminal con la que levantamos el servidor veremos el mensaje "Estamos en el servidor y no tenemos disponible la propiedad del navegador window"
     
       Aquí ahora toca hablar sobre la rehidratación.
           

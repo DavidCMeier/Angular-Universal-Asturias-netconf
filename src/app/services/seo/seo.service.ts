@@ -24,7 +24,8 @@ export class SeoService {
 
   constructor(private title: Title,
               private meta: Meta,
-              @Inject(DOCUMENT) private doc, ) {
+              @Inject(DOCUMENT) private doc,
+              ) {
 
   }
 
